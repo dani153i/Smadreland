@@ -23,7 +23,7 @@ public class Account implements Serializable {
      * and execute it every time the property below is called.
      */
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    // join account and account_roles
+    // join account and account_role
     @JoinTable(
             name = "accounts__account_roles",
             joinColumns = @JoinColumn(
