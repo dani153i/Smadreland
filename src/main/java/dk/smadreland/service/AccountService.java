@@ -22,7 +22,7 @@ public class AccountService implements IAccountService {
     @Autowired
     private IAccountRepository accountRepository;
     @Autowired
-    IAccountRoleRepository accountRoleRepository;
+    private IAccountRoleRepository accountRoleRepository;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
