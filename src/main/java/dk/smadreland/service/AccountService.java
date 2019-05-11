@@ -39,7 +39,7 @@ public class AccountService implements IAccountService {
         user.setPassword(passwordEncoder.encode(registration.getPassword()));
 
         // fetch start roles
-        AccountRole role = accountRoleRepository.findByName("Registered");
+        AccountRole role = accountRoleRepository.findByTitle("Registered");
 
         // set start roles
         user.setRoles(Arrays.asList(role));
@@ -59,7 +59,7 @@ public class AccountService implements IAccountService {
 
     private Collection < ? extends GrantedAuthority> mapRolesToAuthorities(Collection< AccountRole > roles) {
         return roles.stream()
-                .map(role -> new SimpleGrantedAuthority(role.getName()))
+                .map(role -> new SimpleGrantedAuthority(role.getTitle()))
                 .collect(Collectors.toList());
     }
 }

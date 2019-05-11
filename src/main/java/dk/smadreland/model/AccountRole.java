@@ -10,12 +10,12 @@ public class AccountRole implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
+    private String title;
 
     public AccountRole() {}
 
-    public AccountRole(String name) {
-        this.name = name;
+    public AccountRole(String title) {
+        this.title = title;
     }
 
     public Long getId() {
@@ -26,19 +26,19 @@ public class AccountRole implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Override
     public String toString() {
         return "Role{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + title + '\'' +
                 '}';
     }
 }
